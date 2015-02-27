@@ -1,0 +1,7 @@
+/bin
+.classpath
+.project
+project.properties
+org.eclipse.core.resources.prefs
+../SMSSDK/bin
+.settings
