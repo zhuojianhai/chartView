@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.simple.ChartViewAct"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.simple.BarChartViewAct"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
@@ -66,7 +67,7 @@ public class ChartView extends ImageView {
      * @param time3
      * @param time4
      */
-    public void setTime(String time0,String time1, String time2, String time3, String time4) {
+    public void setTime(String time0, String time1, String time2, String time3, String time4) {
         this.time0 = time0;
         this.time1 = time1;
         this.time2 = time2;
@@ -125,6 +126,16 @@ public class ChartView extends ImageView {
         canvas.drawText("25", 13, height * 4 / 5, p);
         canvas.drawLine(50, height * 4 / 5, 52, height * 4 / 5, p);
         canvas.drawText("0", 13, height, p);
+
+        // 画圆角矩形
+        p.setStyle(Paint.Style.FILL);// 充满
+//        p.setColor(Color.LTGRAY);
+        p.setAntiAlias(true);// 设置画笔的锯齿效果
+        canvas.drawText("画圆角矩形:", 10, 260, p);
+        RectF oval3 = new RectF(80, 260, 200, 300);// 设置个新的长方形
+        canvas.drawRoundRect(oval3, 20, 15, p);// 第二个参数是x半径，第三个参数是y半径
+        
+        canvas.drawColor(R.color.abc_search_url_text_holo);
 
         canvas.drawText(time0, 25, height + 20, p);
         canvas.drawText(time1, 25 + (width - 50) / 4, height + 20, p);
