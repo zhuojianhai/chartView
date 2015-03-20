@@ -12,6 +12,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
     private Button bt_cv;
     private Button bt_bcv;
+    private Button bt_parabola;
 
     @SuppressLint("NewApi")
     @Override
@@ -21,8 +22,10 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
         bt_cv = (Button) findViewById(R.id.bt_cv);
         bt_bcv = (Button) findViewById(R.id.bt_bcv);
+        bt_parabola = (Button) findViewById(R.id.bt_parabola);
         bt_cv.setOnClickListener(this);
         bt_bcv.setOnClickListener(this);
+        bt_parabola.setOnClickListener(this);
     }
 
     @Override
@@ -35,6 +38,10 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
         case R.id.bt_bcv:
             Intent i2 = new Intent(MainActivity.this, BarChartViewAct.class);
             startActivity(i2);
+            break;
+        case R.id.bt_parabola:
+            Intent i3 = new Intent(MainActivity.this, ParabolaViewAct.class);
+            startActivity(i3);
             break;
         }
     }

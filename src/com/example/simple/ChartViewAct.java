@@ -2,6 +2,8 @@ package com.example.simple;
 
 import java.util.Random;
 
+import com.example.simple.view.ChartView;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;

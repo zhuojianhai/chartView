@@ -30,6 +30,10 @@
             android:name="com.example.simple.BarChartViewAct"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.example.simple.ParabolaViewAct"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

@@ -20,6 +20,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BarChartVIew" />
+
+        <Button
+            android:id="@+id/bt_parabola"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parabola" />
     </LinearLayout>
 
 </RelativeLayout>

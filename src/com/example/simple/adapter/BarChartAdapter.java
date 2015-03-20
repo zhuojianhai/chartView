@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.example.simple.BarChartView;
 import com.example.simple.R;
+import com.example.simple.view.BarChartView;
 
 public class BarChartAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
