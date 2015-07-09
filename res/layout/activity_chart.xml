@@ -10,11 +10,12 @@
 
         <com.example.simple.view.ChartView
             android:id="@+id/cv_chart"
-            android:layout_width="600dp"
+            android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:layout_alignParentTop="true"
             android:layout_centerInParent="true" >
         </com.example.simple.view.ChartView>
-
+        <!--
         <Button
             android:id="@+id/bt_change"
             android:layout_width="wrap_content"
@@ -22,7 +23,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="50dp"
-            android:text="Change" />
+            android:text="Change" />        -->
     </RelativeLayout>
 
 </RelativeLayout>

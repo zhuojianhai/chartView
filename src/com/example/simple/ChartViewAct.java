@@ -1,9 +1,9 @@
 package com.example.simple;
 
+import java.util.ArrayList;
 import java.util.Random;
 
-import com.example.simple.view.ChartView;
-
+import utils.ChartBean;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -13,7 +13,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-public class ChartViewAct  extends ActionBarActivity implements OnClickListener {
+import com.example.simple.view.ChartView;
+
+public class ChartViewAct extends ActionBarActivity implements OnClickListener {
     private RelativeLayout ll_full;
     private ChartView cv_chart;
     private Button bt_change;
@@ -23,6 +25,7 @@ public class ChartViewAct  extends ActionBarActivity implements OnClickListener 
     private int x3;
     private int x4;
     private int x5;
+    private ArrayList<ChartBean> list;
 
     @SuppressLint("NewApi")
     @Override
@@ -31,18 +34,25 @@ public class ChartViewAct  extends ActionBarActivity implements OnClickListener 
         setContentView(R.layout.activity_chart);
         ll_full = (RelativeLayout) findViewById(R.id.ll_full);
         cv_chart = (ChartView) findViewById(R.id.cv_chart);
-        bt_change = (Button) findViewById(R.id.bt_change);
-        bt_change.setOnClickListener(this);
+//        bt_change = (Button) findViewById(R.id.bt_change);
+//        bt_change.setOnClickListener(this);
         random = new Random();
 
-        cv_chart.setTime("13.12", "14.01", "14.02", "14.03", "14.04");
-        cv_chart.setNum(220, 152, 113, 156, 250);
+        list = new ArrayList<ChartBean>();
+
+        for (int i = 0; i < 5; i++) {
+            ChartBean chartBean = new ChartBean(15 + (i * 3) % 9, "05.05");
+            list.add(chartBean);
+        }
+        cv_chart.setData(list, "元/斤", true);
         cv_chart.invalidate();
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        // TODO Auto-generated method stub
+        /**
+         * 此处可添加修改高度的，没有用到
+         */
         int action = event.getAction();
 
         switch (action) {
@@ -82,7 +92,6 @@ public class ChartViewAct  extends ActionBarActivity implements OnClickListener 
                 /** 修改第五列的数据 */
                 x5 = judgeHeight(offsetY);
             }
-            cv_chart.setNum(x1, x2, x3, x4, x5);
             cv_chart.invalidate();
             break;
         }
@@ -91,6 +100,7 @@ public class ChartViewAct  extends ActionBarActivity implements OnClickListener 
 
     /**
      * 根据得到的高度判断
+     * 
      * @param offsetY
      * @return
      */
@@ -106,16 +116,8 @@ public class ChartViewAct  extends ActionBarActivity implements OnClickListener 
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-        case R.id.bt_change:
-            x1 = random.nextInt(300);
-            x2 = random.nextInt(300);
-            x3 = random.nextInt(300);
-            x4 = random.nextInt(300);
-            x5 = random.nextInt(300);
-            cv_chart.setNum(x1, x2, x3, x4, x5);
-            cv_chart.invalidate();
-            break;
-        }
+        // TODO Auto-generated method stub
+        
     }
+
 }
