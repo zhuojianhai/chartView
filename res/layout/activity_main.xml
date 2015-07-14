@@ -10,6 +10,11 @@
         android:orientation="vertical" >
 
         <Button
+            android:id="@+id/bt_ripple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RippleView" />
+        <Button
             android:id="@+id/bt_cv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

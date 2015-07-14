@@ -11,6 +11,7 @@ import android.widget.Button;
 public class MainActivity extends ActionBarActivity implements OnClickListener {
 
     private Button bt_cv;
+    private Button bt_ripple;
     private Button bt_bcv;
     private Button bt_parabola;
 
@@ -20,9 +21,11 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        bt_ripple = (Button) findViewById(R.id.bt_ripple);
         bt_cv = (Button) findViewById(R.id.bt_cv);
         bt_bcv = (Button) findViewById(R.id.bt_bcv);
         bt_parabola = (Button) findViewById(R.id.bt_parabola);
+        bt_ripple.setOnClickListener(this);
         bt_cv.setOnClickListener(this);
         bt_bcv.setOnClickListener(this);
         bt_parabola.setOnClickListener(this);
@@ -31,6 +34,10 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+        case R.id.bt_ripple:
+            Intent i0 = new Intent(MainActivity.this, RippleViewActivity.class);
+            startActivity(i0);
+            break;
         case R.id.bt_cv:
             Intent i1 = new Intent(MainActivity.this, ChartViewAct.class);
             startActivity(i1);
